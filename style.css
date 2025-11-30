@@ -209,10 +209,7 @@ header .mobile-nav {
   transition: all 1d;
 }
 
-.about {
-  min-height: 100vh;
-  padding: 3rem 0;
-}
+
 
 .about .container .content {
   display: flex;
@@ -234,18 +231,19 @@ header .mobile-nav {
 }
 
 .about .container .content .about-me .profile .image-box {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  background-color: #191919;
+  background-color: #fff;
   border-radius: 16px;
-  width: 75%;
-  height: 75vh;
 }
 
 .about .container .content .about-me .profile .image-box img {
-  width: 70%;
+  width: auto;
+  display: block;
+  max-width: 300px;
+  border-radius: 12px;
 }
 
 .about .container .content .about-me .description {
@@ -285,10 +283,11 @@ header .mobile-nav {
   text-align: justify;
 }
 
+.about,
 .skill,
 .project,
 .contact {
-  padding: 3rem 0;
+  padding: 6rem 0;
   width: 100%;
 }
 
@@ -304,7 +303,7 @@ header .mobile-nav {
 
 .skill .container .content .skills {
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -337,18 +336,17 @@ header .mobile-nav {
 .project .container .content .projects {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 20px;
   width: 85%;
-  
 }
 
 .project .container .content .projects .card {
   padding: 16px;
   border: 2px solid #fff;
   border-radius: 12px;
-  min-height: 600px;
+  vertical-align: top;
 }
 
 .project .container .content .projects .card img {
@@ -445,6 +443,24 @@ header .mobile-nav {
 
 .contact .container .content .contact-form textarea:focus {
   outline: none;
+}
+
+.contact .container .content .contact-form button {
+  cursor: pointer;
+  padding: 12px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  width: 30%;
+  align-self: center;
+  transition: 0.3s linear;
+}
+
+.contact .container .content .contact-form button:hover {
+  background: #fff;
+  color: #000;
+  transition: 0.3s linear;
 }
 
 
