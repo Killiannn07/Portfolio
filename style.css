@@ -26,13 +26,32 @@ body {
 }
 
 .container {
-  padding: 1rem 6rem;
+  padding: 1rem 1.5rem;
 }
 
 .title {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
+}
+
+/* Tablet and larger screens */
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 1rem 3rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    padding: 1rem 6rem;
+  }
+  .title {
+    font-size: 3rem;
+  }
 }
 
 header {
@@ -41,10 +60,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px;
+  padding: 12px;
   width: 100%;
-  height: 10vh;
+  height: auto;
   z-index: 9999;
+  background-color: #0b0f14;
 }
 
 header .logo {
@@ -62,11 +82,23 @@ header .logo a {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  header .logo a {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header .logo a {
+    font-size: 20px;
+  }
 }
 
 header nav {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 60px;
 }
@@ -75,8 +107,18 @@ header nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   transition: 0.3s linear;
+}
+
+@media screen and (min-width: 1024px) {
+  header nav {
+    display: flex;
+    gap: 40px;
+  }
+  header nav a {
+    font-size: 18px;
+  }
 }
 
 header nav a::after {
@@ -96,10 +138,16 @@ header nav a:hover::after {
 }
 
 header .extra-nav {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  header .extra-nav {
+    display: flex;
+  }
 }
 
 header .extra-nav button {
@@ -109,9 +157,16 @@ header .extra-nav button {
   border-radius: 8px;
   color: #fff;
   font-weight: 600;
-  font-size: 18px;
-  padding: 10px 12px;
+  font-size: 14px;
+  padding: 8px 12px;
   transition: 0.3s linear;
+}
+
+@media screen and (min-width: 1024px) {
+  header .extra-nav button {
+    font-size: 18px;
+    padding: 10px 12px;
+  }
 }
 
 header .extra-nav button:hover {
@@ -122,7 +177,13 @@ header .extra-nav button:hover {
 
 header .hamburger-menu {
   cursor: pointer;
-  display: none;
+  display: block;
+}
+
+@media screen and (min-width: 1024px) {
+  header .hamburger-menu {
+    display: none;
+  }
 }
 
 header .mobile-nav {
@@ -134,6 +195,7 @@ header .mobile-nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 60px;
 }
 
 .hero .container .content {
@@ -145,22 +207,58 @@ header .mobile-nav {
 }
 
 .hero .container .content svg {
-  margin-bottom: -4rem;
+  margin-bottom: -1rem;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .hero .container .content svg text {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 132px;
+  font-size: 40px;
   animation: stroke 5s infinite alternate;
+}
+
+@media screen and (min-width: 768px) {
+  .hero .container .content svg {
+    margin-bottom: -2rem;
+  }
+  .hero .container .content svg text {
+    font-size: 80px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero .container .content svg {
+    margin-bottom: -4rem;
+  }
+  .hero .container .content svg text {
+    font-size: 132px;
+  }
 }
 
 .hero .container .content h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  line-height: 48px;
+  line-height: 1.4;
   width: 100%;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .hero .container .content h1 {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero .container .content h1 {
+    font-size: 2.2rem;
+    line-height: 48px;
+  }
 }
 
 .hero .container .content h1 span {
@@ -174,13 +272,13 @@ header .mobile-nav {
 .hero .container .content button {
   cursor: pointer;
   padding: 0.1em 0.25em;
-  width: 13em;
-  height: 4.2em;
+  width: 12em;
+  height: 3.5em;
   color: #fff;
   background-color: #000;
   border: 0.08em solid #fff;
   border-radius: 0.3em;
-  font-size: 12px;
+  font-size: 11px;
   margin-top: 20px;
 }
 
@@ -190,8 +288,8 @@ header .mobile-nav {
   justify-content: center;
   align-items: center;
   bottom: 0.4em;
-  width: 8.25em;
-  height: 2.5em;
+  width: 7.5em;
+  height: 2em;
   background-color: #000;
   border-radius: 0.2em;
   font-size: 1.5em;
@@ -199,14 +297,27 @@ header .mobile-nav {
   box-shadow: 0 0.4em 0.1em 0.019em #fff;
 }
 
-.hero .container .content button span:active {
-  transition: all 0.5s;
-  transform: translate(0, 0.4em);
-  box-shadow: 0 0 0 0 #fff;
+@media screen and (min-width: 640px) {
+  .hero .container .content button {
+    width: 13em;
+    height: 4em;
+    font-size: 12px;
+  }
+  .hero .container .content button span {
+    width: 8em;
+    height: 2.3em;
+  }
 }
 
-.hero .container .content button span:not(active) {
-  transition: all 1d;
+@media screen and (min-width: 1024px) {
+  .hero .container .content button {
+    width: 13em;
+    height: 4.2em;
+  }
+  .hero .container .content button span {
+    width: 8.25em;
+    height: 2.5em;
+  }
 }
 
 
@@ -220,11 +331,12 @@ header .mobile-nav {
 
 .about .container .content .about-me {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .about .container .content .about-me .profile {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,26 +354,42 @@ header .mobile-nav {
 .about .container .content .about-me .profile .image-box img {
   width: auto;
   display: block;
-  max-width: 300px;
+  max-width: 200px;
   border-radius: 12px;
 }
 
 .about .container .content .about-me .description {
-  width: 50%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.about .container .content .about-me .description .name-role {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+@media screen and (min-width: 768px) {
+  .about .container .content .about-me {
+    flex-direction: row;
+    gap: 12px;
+  }
+  .about .container .content .about-me .profile {
+    width: 50%;
+  }
+  .about .container .content .about-me .profile .image-box img {
+    max-width: 250px;
+  }
+  .about .container .content .about-me .description {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about .container .content .about-me .profile .image-box img {
+    max-width: 300px;
+  }
 }
 
 .about .container .content .about-me .description .name-role h1 {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 1.8rem;
 }
 
 .about .container .content .about-me .description .name-role .role {
@@ -271,7 +399,7 @@ header .mobile-nav {
 
 .about .container .content .about-me .description .name-role .role h2 {
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.2rem;
   padding: 4px 6px;
   background-color: #fff;
   border-radius: 8px;
@@ -279,16 +407,59 @@ header .mobile-nav {
 }
 
 .about .container .content .about-me .description p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: justify;
+  line-height: 1.6;
+}
+
+@media screen and (min-width: 768px) {
+  .about .container .content .about-me .description .name-role h1 {
+    font-size: 2.5rem;
+  }
+  .about .container .content .about-me .description .name-role .role h2 {
+    font-size: 1.5rem;
+  }
+  .about .container .content .about-me .description p {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about .container .content .about-me .description .name-role h1 {
+    font-size: 3rem;
+  }
+  .about .container .content .about-me .description .name-role .role h2 {
+    font-size: 2rem;
+  }
+  .about .container .content .about-me .description p {
+    font-size: 1.2rem;
+  }
 }
 
 .about,
 .skill,
 .project,
 .contact {
-  padding: 6rem 0;
+  padding: 3rem 0;
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .about,
+  .skill,
+  .project,
+  .contact {
+    padding: 4rem 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about,
+  .skill,
+  .project,
+  .contact {
+    padding: 6rem 0;
+  }
 }
 
 .skill .container .content,
@@ -303,11 +474,31 @@ header .mobile-nav {
 
 .skill .container .content .skills {
   display: grid;
-  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   align-items: center;
   justify-content: center;
   gap: 12px;
-  width: 80%;
+  width: 90%;
+}
+
+@media screen and (min-width: 640px) {
+  .skill .container .content .skills {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .skill .container .content .skills {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .skill .container .content .skills {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    width: 80%;
+  }
 }
 
 .skill .container .content .skills .skill-box {
@@ -317,9 +508,21 @@ header .mobile-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 80px;
   filter: grayscale(100);
   transition: all 0.2s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .skill .container .content .skills .skill-box {
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .skill .container .content .skills .skill-box {
+    height: 100px;
+  }
 }
 
 .skill .container .content .skills .skill-box:hover {
@@ -335,15 +538,29 @@ header .mobile-nav {
 
 .project .container .content .projects {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   align-items: start;
   justify-content: center;
   gap: 20px;
-  width: 85%;
+  width: 95%;
+}
+
+@media screen and (min-width: 768px) {
+  .project .container .content .projects {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .project .container .content .projects {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 85%;
+  }
 }
 
 .project .container .content .projects .card {
-  padding: 16px;
+  padding: 12px;
   border: 2px solid #fff;
   border-radius: 12px;
   vertical-align: top;
@@ -351,25 +568,47 @@ header .mobile-nav {
 
 .project .container .content .projects .card img {
   width: 100%;
-  height: 50%;
+  height: auto;
 }
 
 .project .container .content .projects .card .description {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  height: 50%;
 }
 
 .project .container .content .projects .card .description h1 {
   font-weight: bold;
-  font-size: 28px;
+  font-size: 1.2rem;
+  margin-top: 8px;
 }
 
 .project .container .content .projects .card .description p {
-  font-size: 18px;
+  font-size: 0.95rem;
   font-weight: 400;
   text-align: justify;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 768px) {
+  .project .container .content .projects .card .description h1 {
+    font-size: 1.5rem;
+  }
+  .project .container .content .projects .card .description p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .project .container .content .projects .card {
+    padding: 16px;
+  }
+  .project .container .content .projects .card .description h1 {
+    font-size: 28px;
+  }
+  .project .container .content .projects .card .description p {
+    font-size: 18px;
+  }
 }
 
 .project .container .content .projects .card .description .action {
@@ -385,13 +624,27 @@ header .mobile-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px;
+  padding: 10px;
   border: 2px solid #fff;
   border-radius: 12px;
   background: transparent;
   color: #fff;
-  width: 25%;
+  width: 48%;
+  font-size: 0.9rem;
   transition: 0.3s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .project .container .content .projects .card .description .action button {
+    width: 30%;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .project .container .content .projects .card .description .action button {
+    width: 25%;
+  }
 }
 
 .project .container .content .projects .card .description .action button:hover {
@@ -404,8 +657,9 @@ header .mobile-nav {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 20px;
-  width: 50%;
+  padding: 16px;
+  width: 95%;
+  max-width: 600px;
   border: 4px solid #fff;
   border-radius: 20px;
 }
@@ -413,18 +667,18 @@ header .mobile-nav {
 .contact .container .content .contact-form .input {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 8px;
 }
 
 .contact .container .content .contact-form .input input {
-  width: 49%;
+  width: 100%;
   padding: 12px;
   background: transparent;
   border: 3px solid #fff;
   border-radius: 8px;
   color: #fff;
+  font-size: 1rem;
 }
 
 .contact .container .content .contact-form .input input:focus {
@@ -434,11 +688,12 @@ header .mobile-nav {
 .contact .container .content .contact-form textarea {
   resize: none;
   padding: 12px;
-  height: 300px;
+  height: 200px;
   background: transparent;
   border: 3px solid #fff;
   border-radius: 8px;
   color: #fff;
+  font-size: 1rem;
 }
 
 .contact .container .content .contact-form textarea:focus {
@@ -452,9 +707,38 @@ header .mobile-nav {
   border-radius: 8px;
   background: transparent;
   color: #fff;
-  width: 30%;
+  width: 100%;
+  max-width: 200px;
   align-self: center;
+  font-size: 1rem;
   transition: 0.3s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .contact .container .content .contact-form {
+    width: 80%;
+    padding: 20px;
+  }
+  .contact .container .content .contact-form .input {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .contact .container .content .contact-form .input input {
+    width: 49%;
+  }
+  .contact .container .content .contact-form textarea {
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contact .container .content .contact-form {
+    width: 50%;
+  }
+  .contact .container .content .contact-form button {
+    width: 30%;
+  }
 }
 
 .contact .container .content .contact-form button:hover {
@@ -495,14 +779,9 @@ header .mobile-nav {
   }
 }
 
-@media screen and (max-width: 1024px) {
-  header nav,
-  header .extra-nav {
-    display: none;
-  }
-
-  header .hamburger-menu {
-    display: block;
+@media screen and (max-width: 1023px) {
+  header .logo a h2 {
+    font-size: 18px;
   }
 
   header .mobile-nav {
@@ -537,8 +816,8 @@ header .mobile-nav {
 
   header .mobile-nav .close svg {
     cursor: pointer;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 
   header .mobile-nav ul {
@@ -561,8 +840,14 @@ header .mobile-nav {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 36px;
+    font-size: 24px;
     transition: 0.3s linear;
+  }
+
+  @media screen and (min-width: 768px) {
+    header .mobile-nav ul li a {
+      font-size: 28px;
+    }
   }
 
   header .mobile-nav ul li .nav-link::after {
@@ -587,7 +872,7 @@ header .mobile-nav {
 
 @media screen and (max-width: 768px) {
   header .mobile-nav ul li {
-    width: 35%;
+    width: 60%;
   }
 
   footer .container {
